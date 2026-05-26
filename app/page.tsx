@@ -1,8 +1,10 @@
 import Link from "next/link";
+import Image from "next/image";
 import type { Metadata } from "next";
 import AnimatedSection from "@/components/AnimatedSection";
 import { getRecentPosts, formatDatum } from "@/lib/posts";
 import { FlipButton } from "@/components/ui/FlipButton";
+import HeroVideo from "@/components/HeroVideo";
 
 export const metadata: Metadata = {
   title: "Rendite & Realität — Ehrliches Immobilien- und Unternehmerjournal",
@@ -44,14 +46,7 @@ export default function StartPage() {
     <>
       {/* Hero */}
       <section className="relative min-h-[90vh] flex flex-col justify-center overflow-hidden">
-        <video
-          className="absolute inset-0 w-full h-full object-cover"
-          src="/Hero%20Video%20neu.mp4"
-          autoPlay
-          muted
-          loop
-          playsInline
-        />
+        <HeroVideo />
         <div className="absolute inset-0 bg-gradient-to-b from-[#091426]/65 via-[#091426]/50 to-[#091426]/70" />
 
         <div className="relative z-10 max-w-6xl mx-auto w-full px-5 sm:px-8 pt-28 pb-20">
@@ -213,24 +208,14 @@ export default function StartPage() {
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           <AnimatedSection direction="left">
-            <div className="aspect-square max-w-sm glass-card rounded-[48px] flex flex-col items-center justify-center relative overflow-hidden">
-              <div className="absolute inset-0 bg-gradient-to-br from-[#d8e3fb]/30 to-transparent" />
-              <svg
-                className="w-20 h-20 text-[#091426]/25 relative z-10"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={0.75}
-                  d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"
-                />
-              </svg>
-              <p className="mt-4 text-sm relative z-10 text-[#091426]/30 font-medium">
-                Profilfoto folgt
-              </p>
+            <div className="aspect-square max-w-sm glass-card rounded-[48px] relative overflow-hidden">
+              <Image
+                src="/Bild Calvin Linke 3.jpg"
+                alt="Calvin Linke"
+                fill
+                className="object-cover"
+                sizes="(max-width: 768px) 100vw, 384px"
+              />
             </div>
           </AnimatedSection>
 
