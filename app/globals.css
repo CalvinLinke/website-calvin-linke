@@ -1,0 +1,67 @@
+@import "tailwindcss";
+
+@theme inline {
+  --color-bg: #f7f9fb;
+  --color-text: #191c1e;
+  --color-accent: #091426;
+  --color-accent-hover: #0f1f3d;
+  --color-accent-light: #d8e3fb;
+  --color-accent-muted: #545f73;
+  --color-muted: #6b7280;
+  --color-border: #e0e3e5;
+  --color-card: #ffffff;
+  --color-card-hover: #f2f4f6;
+  --color-surface: #f7f9fb;
+
+  --font-sans: var(--font-manrope);
+  --font-body: var(--font-manrope);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: #f7f9fb;
+  color: #191c1e;
+  font-family: var(--font-manrope), system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-manrope), system-ui, sans-serif;
+  letter-spacing: -0.02em;
+}
+
+::selection {
+  background-color: #091426;
+  color: #ffffff;
+}
+
+:focus-visible {
+  outline: 2px solid #091426;
+  outline-offset: 2px;
+}
+
+@layer components {
+  .glass-card {
+    background: rgba(255, 255, 255, 0.78);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.45);
+  }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+}
+
+.floating {
+  animation: float 6s ease-in-out infinite;
+}
