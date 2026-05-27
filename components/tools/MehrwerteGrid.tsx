@@ -73,9 +73,18 @@ export default function MehrwerteGrid() {
   // Scroll to panel when it opens
   useEffect(() => {
     if (activeId && panelRef.current) {
+      // Wait for the 450ms open animation to finish before scrolling
       setTimeout(() => {
-        panelRef.current?.scrollIntoView({ behavior: "smooth", block: "nearest" });
-      }, 80);
+        const el = panelRef.current;
+        if (!el) return;
+        if (window.innerWidth < 1024) {
+          // Mobile: offset for fixed navbar (64px) + 16px breathing room
+          const top = window.scrollY + el.getBoundingClientRect().top - 80;
+          window.scrollTo({ top: Math.max(0, top), behavior: "smooth" });
+        } else {
+          el.scrollIntoView({ behavior: "smooth", block: "nearest" });
+        }
+      }, 460);
     }
   }, [activeId]);
 
