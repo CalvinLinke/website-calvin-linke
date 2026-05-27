@@ -173,14 +173,6 @@ export default function Navbar() {
                 );
               })}
             </ul>
-            <div className="mt-6 pt-6 border-t border-[#e0e3e5]">
-              <Link
-                href="/kontakt"
-                className="block w-full text-center px-4 py-3 text-sm font-semibold bg-[#091426] text-white rounded-full hover:bg-[#0f1f3d] transition-all"
-              >
-                Kontakt aufnehmen
-              </Link>
-            </div>
           </motion.div>
         )}
       </AnimatePresence>
