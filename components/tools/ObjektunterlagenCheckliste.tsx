@@ -219,25 +219,16 @@ export default function ObjektunterlagenCheckliste() {
 
         <div className="p-8 sm:p-10">
           {/* Header */}
-          <div className="flex items-center justify-between mb-6">
-            <div>
-              <h3
-                className="text-lg font-bold text-[#191c1e]"
-                style={{ letterSpacing: "-0.015em" }}
-              >
-                {currentList.title}
-              </h3>
-              <p className="text-sm text-[#6B7280] mt-0.5">
-                {checkedCount} von {total} erledigt
-              </p>
-            </div>
-            <button
-              onClick={handlePrint}
-              className="flex items-center gap-2 px-4 py-2 rounded-full border border-[#e0e3e5] text-[#191c1e] text-sm font-semibold hover:border-[#091426]/30 transition-colors"
+          <div className="mb-6">
+            <h3
+              className="text-lg font-bold text-[#191c1e]"
+              style={{ letterSpacing: "-0.015em" }}
             >
-              <span className="material-symbols-outlined text-[16px]">download</span>
-              Als PDF speichern
-            </button>
+              {currentList.title}
+            </h3>
+            <p className="text-sm text-[#6B7280] mt-0.5">
+              {checkedCount} von {total} erledigt
+            </p>
           </div>
 
           {/* Progress bar */}
@@ -285,8 +276,17 @@ export default function ObjektunterlagenCheckliste() {
             ))}
           </div>
 
+          {/* PDF-Button */}
+          <button
+            onClick={handlePrint}
+            className="mt-8 w-full flex items-center justify-center gap-2 px-4 py-3 rounded-2xl border border-[#e0e3e5] text-[#191c1e] text-sm font-semibold hover:border-[#091426]/30 transition-colors"
+          >
+            <span className="material-symbols-outlined text-[16px]">download</span>
+            Als PDF speichern
+          </button>
+
           {/* CTA */}
-          <div className="mt-10 rounded-2xl bg-[#091426] p-6 sm:p-8">
+          <div className="mt-6 rounded-2xl bg-[#091426] p-6 sm:p-8">
             <p className="text-white font-bold text-base mb-2">
               Unterlagen sammeln klingt trocken — ist es auch.
             </p>
