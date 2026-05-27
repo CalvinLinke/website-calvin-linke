@@ -26,7 +26,7 @@ const pillars = [
     href: "/immobilienwissen",
   },
   {
-    icon: "manage_search",
+    icon: "auto_stories",
     titel: "Erfahrungen",
     text: "Was in der Praxis wirklich passiert. Projekte, Fehler, Lernpunkte.",
     href: "/erfahrungen",
@@ -118,23 +118,44 @@ export default function StartPage() {
 
         <div className="mt-12 grid grid-cols-1 md:grid-cols-3 gap-5">
           {pillars.map((pillar, i) => (
-            <AnimatedSection key={pillar.titel} delay={i * 0.1}>
+            <AnimatedSection key={pillar.titel} delay={i * 0.1} className="h-full">
               <Link
                 href={pillar.href}
-                className="group flex flex-col glass-card rounded-[32px] p-8 hover:shadow-xl transition-all duration-300 h-full"
+                className="group flex flex-col rounded-[32px] overflow-hidden hover:shadow-2xl hover:scale-[1.02] transition-all duration-300 h-full"
               >
-                <span className="material-symbols-outlined text-[#091426] text-[28px]">
-                  {pillar.icon}
-                </span>
-                <h3 className="mt-5 text-xl font-bold text-[#191c1e] group-hover:text-[#091426] transition-colors">
-                  {pillar.titel}
-                </h3>
-                <p className="mt-2 text-sm text-[#6B7280] leading-relaxed flex-1">
-                  {pillar.text}
-                </p>
-                <span className="mt-6 inline-block text-sm text-[#091426] font-semibold group-hover:underline">
-                  Mehr lesen →
-                </span>
+                {/* Navy oberteil */}
+                <div className="relative bg-[#091426] px-8 pt-8 pb-10 overflow-hidden flex-shrink-0">
+                  <span className="absolute -top-3 right-3 text-[88px] font-bold text-white/5 leading-none select-none pointer-events-none">
+                    {String(i + 1).padStart(2, "0")}
+                  </span>
+                  <div className="w-11 h-11 rounded-2xl bg-white/10 flex items-center justify-center group-hover:bg-white/20 transition-colors duration-300">
+                    <span className="material-symbols-outlined text-white text-[20px]">
+                      {pillar.icon}
+                    </span>
+                  </div>
+                </div>
+
+                {/* Helles unterteil */}
+                <div className="flex flex-col flex-1 bg-white px-8 py-7">
+                  <h3
+                    className="text-xl font-bold text-[#191c1e]"
+                    style={{ letterSpacing: "-0.02em" }}
+                  >
+                    {pillar.titel}
+                  </h3>
+                  <p className="mt-2 text-sm text-[#6B7280] leading-relaxed flex-1">
+                    {pillar.text}
+                  </p>
+                  <div className="mt-6 flex items-center gap-1.5 text-sm text-[#091426] font-semibold">
+                    Mehr lesen
+                    <svg
+                      width="14" height="14" viewBox="0 0 14 14" fill="none"
+                      className="group-hover:translate-x-1 transition-transform duration-200"
+                    >
+                      <path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+                    </svg>
+                  </div>
+                </div>
               </Link>
             </AnimatedSection>
           ))}
@@ -208,12 +229,12 @@ export default function StartPage() {
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           <AnimatedSection direction="left">
-            <div className="aspect-square max-w-sm glass-card rounded-[48px] relative overflow-hidden">
+            <div className="aspect-[3/4] max-w-sm glass-card rounded-[48px] relative overflow-hidden">
               <Image
-                src="/Bild Calvin Linke 3.jpg"
+                src="/Bildschirmfoto 2026-05-27 um 18.16.42.png"
                 alt="Calvin Linke"
                 fill
-                className="object-cover"
+                className="object-cover object-center"
                 sizes="(max-width: 768px) 100vw, 384px"
               />
             </div>
@@ -252,6 +273,30 @@ export default function StartPage() {
             </div>
           </AnimatedSection>
         </div>
+      </section>
+
+      {/* Quote */}
+      <section className="relative py-24 px-5 sm:px-8">
+        <div className="absolute top-0 left-5 right-5 h-px bg-gradient-to-r from-transparent via-[#e0e3e5] to-transparent" />
+
+        <AnimatedSection className="max-w-2xl mx-auto text-center">
+          <p className="text-[80px] leading-[0.8] font-bold text-[#091426]/10 mb-4 select-none" aria-hidden="true">&ldquo;</p>
+          <blockquote
+            className="text-xl sm:text-2xl font-bold text-[#191c1e] leading-snug"
+            style={{ letterSpacing: "-0.02em" }}
+          >
+            Wer Gutes gibt, bekommt Gutes zurück. Man kann den Markt nicht verändern — aber man kann entscheiden, mit wem man ihn gestaltet.
+          </blockquote>
+          <div className="mt-10 flex flex-col items-center gap-2">
+            <Image
+              src="/signature_transparent.png"
+              alt="Unterschrift Calvin Linke"
+              width={340}
+              height={85}
+            />
+            <span className="text-sm font-semibold text-[#6B7280] tracking-wide">Calvin Linke</span>
+          </div>
+        </AnimatedSection>
       </section>
 
       {/* CTA */}
