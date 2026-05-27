@@ -29,19 +29,10 @@ export default function UnternehmensgruppeSeite() {
               <br />
               <span className="text-white/60">Eine Haltung.</span>
             </h1>
-            <div className="mt-6 text-lg sm:text-xl text-white/60 leading-relaxed max-w-2xl space-y-3">
-              <p>
-                Wenn ich heute auf meine Unternehmen schaue, sehe ich weniger eine klassisch geplante
-                Unternehmensgruppe – sondern eher mehrere Entwicklungen, die sich aus der Praxis heraus
-                ergeben haben.
-              </p>
-              <p>
-                Es war selten so, dass ich gesagt habe: „Ich gründe jetzt genau dieses Unternehmen."
-                Vieles ist entstanden, weil sich aus dem Alltag heraus Chancen oder Probleme ergeben
-                haben, die eine eigene Lösung gebraucht haben.
-              </p>
-              <p>Und genau so haben sich auch die Rollen entwickelt.</p>
-            </div>
+            <p className="mt-6 text-lg sm:text-xl text-white/60 leading-relaxed max-w-2xl">
+              Entstanden aus der Praxis, nicht aus dem Businessplan — jedes Unternehmen hat sich entwickelt,
+              weil Chancen oder Probleme des Alltags eine eigene Lösung gebraucht haben.
+            </p>
           </AnimatedSection>
         </div>
       </section>
