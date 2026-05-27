@@ -41,16 +41,18 @@ export default function Navbar() {
     };
   }, [menuOpen]);
 
-  const transparent = !scrolled && !menuOpen && pathname === "/";
+  const isHome = pathname === "/";
+  const transparent = !scrolled && !menuOpen && isHome;
+  const navBg = transparent
+    ? "bg-transparent"
+    : isHome
+    ? "bg-white/95 backdrop-blur-md border-b border-[#e0e3e5] shadow-sm"
+    : "bg-[#f7f9fb] border-b border-[#e0e3e5]";
 
   return (
     <>
       <header
-        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-700 ${
-          transparent
-            ? "bg-transparent"
-            : "bg-white/95 backdrop-blur-md border-b border-[#e0e3e5] shadow-sm"
-        }`}
+        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-700 ${navBg}`}
       >
         <nav className="max-w-6xl mx-auto px-5 sm:px-8 flex items-center justify-between h-16">
           <Link

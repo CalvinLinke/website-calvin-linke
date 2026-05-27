@@ -65,13 +65,21 @@ export function FlipButton({
       onMouseLeave={() => setHovered(false)}
     >
       <motion.div
-        style={{ transformStyle: "preserve-3d", borderRadius: "9999px" }}
+        style={{ transformStyle: "preserve-3d", borderRadius: "9999px", position: "relative" }}
         animate={{ rotateX: hovered ? 180 : 0 }}
         transition={{ duration: 0.45, ease: [0.23, 1, 0.32, 1] }}
       >
+        {/* Invisible spacer — sizes button to the wider of the two texts */}
+        <div
+          aria-hidden
+          className={`${padding} font-semibold invisible select-none pointer-events-none whitespace-nowrap`}
+        >
+          {hoverText.length >= text.length ? hoverText : text}
+        </div>
+
         {/* Front */}
         <div
-          style={{ ...front, backfaceVisibility: "hidden", borderRadius: "9999px" }}
+          style={{ ...front, backfaceVisibility: "hidden", borderRadius: "9999px", position: "absolute", inset: 0 }}
           className={`${padding} font-semibold flex items-center justify-center whitespace-nowrap`}
         >
           {text}

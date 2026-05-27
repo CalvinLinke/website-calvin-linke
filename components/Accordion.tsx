@@ -4,10 +4,11 @@ import { useState } from "react";
 interface AccordionItem {
   nr: string;
   titel: string;
+  teaser?: string;
   children: React.ReactNode;
 }
 
-export function AccordionItem({ nr, titel, children }: AccordionItem) {
+export function AccordionItem({ nr, titel, teaser, children }: AccordionItem) {
   const [open, setOpen] = useState(false);
 
   return (
@@ -20,9 +21,14 @@ export function AccordionItem({ nr, titel, children }: AccordionItem) {
           <span className="inline-flex items-center justify-center w-8 h-8 rounded-full bg-[#091426] text-white text-xs font-semibold flex-shrink-0">
             {nr}
           </span>
-          <span className="text-lg font-bold text-[#191c1e]" style={{ letterSpacing: "-0.02em" }}>
-            {titel}
-          </span>
+          <div>
+            <span className="text-lg font-bold text-[#191c1e]" style={{ letterSpacing: "-0.02em" }}>
+              {titel}
+            </span>
+            {teaser && (
+              <p className="mt-1 text-sm text-[#6B7280] leading-snug">{teaser}</p>
+            )}
+          </div>
         </div>
         <span
           className="flex-shrink-0 w-8 h-8 rounded-full border border-[#e0e3e5] flex items-center justify-center transition-transform duration-300"

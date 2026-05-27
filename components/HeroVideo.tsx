@@ -1,7 +1,7 @@
 "use client";
 import { useEffect, useRef } from "react";
 
-export default function HeroVideo() {
+export default function HeroVideo({ src = "/Hero%20Video%20neu.mp4" }: { src?: string }) {
   const ref = useRef<HTMLVideoElement>(null);
 
   useEffect(() => {
@@ -20,7 +20,7 @@ export default function HeroVideo() {
     <video
       ref={ref}
       className="absolute inset-0 w-full h-full object-cover"
-      src="/Hero%20Video%20neu.mp4"
+      src={src}
       autoPlay
       muted
       playsInline
