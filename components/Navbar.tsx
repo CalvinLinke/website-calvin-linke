@@ -101,14 +101,7 @@ export default function Navbar() {
             })}
           </ul>
 
-          {/* Mobile: kompakter Button */}
-          <FlipButton
-            href="/kontakt"
-            variant={transparent ? "white" : "navy"}
-            size="xs"
-            className="lg:hidden"
-          />
-          {/* Desktop: normaler Button */}
+          {/* Desktop only */}
           <div className="hidden lg:block">
             <FlipButton
               href="/kontakt"
