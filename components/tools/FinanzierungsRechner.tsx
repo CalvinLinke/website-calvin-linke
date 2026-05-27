@@ -142,30 +142,6 @@ export default function FinanzierungsRechner() {
         </div>
       </div>
 
-      {/* Live Zinssatz CTA */}
-      <AnimatePresence mode="wait">
-        {zinsCta && (
-          <motion.div
-            key={zinsCta.text}
-            initial={{ opacity: 0, y: 8 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -8 }}
-            transition={{ duration: 0.3 }}
-            className="mb-6 rounded-2xl bg-[#091426] p-5"
-          >
-            <p className="text-white font-bold text-sm mb-0.5">{zinsCta.text}</p>
-            <p className="text-white/70 text-xs leading-relaxed mb-3">{zinsCta.sub}</p>
-            <Link
-              href="/kontakt"
-              className="inline-flex items-center gap-1.5 text-white/80 text-xs font-semibold hover:text-white transition-colors"
-            >
-              Jetzt melden
-              <span className="material-symbols-outlined text-[14px]">arrow_forward</span>
-            </Link>
-          </motion.div>
-        )}
-      </AnimatePresence>
-
       <button
         onClick={() => setCalculated(true)}
         className="w-full py-4 rounded-full bg-[#091426] text-white font-semibold text-sm hover:bg-[#0d1f3a] transition-colors"
@@ -239,9 +215,33 @@ export default function FinanzierungsRechner() {
               </div>
             </div>
 
-            <p className="text-xs text-[#6B7280] text-center">
+            <p className="text-xs text-[#6B7280] text-center mb-6">
               Vereinfachte Berechnung — für exakte Konditionen empfehle ich ein Bankgespräch.
             </p>
+
+            {/* CTA unter Ergebnis */}
+            <AnimatePresence mode="wait">
+              {zinsCta && (
+                <motion.div
+                  key={zinsCta.text}
+                  initial={{ opacity: 0, y: 8 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, y: -8 }}
+                  transition={{ duration: 0.3 }}
+                  className="rounded-2xl bg-[#091426] p-5"
+                >
+                  <p className="text-white font-bold text-sm mb-0.5">{zinsCta.text}</p>
+                  <p className="text-white/70 text-xs leading-relaxed mb-3">{zinsCta.sub}</p>
+                  <Link
+                    href="/kontakt"
+                    className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-white text-[#091426] text-xs font-semibold hover:bg-[#f7f9fb] transition-colors"
+                  >
+                    Jetzt melden
+                    <span className="material-symbols-outlined text-[14px]">arrow_forward</span>
+                  </Link>
+                </motion.div>
+              )}
+            </AnimatePresence>
           </motion.div>
         )}
       </AnimatePresence>
