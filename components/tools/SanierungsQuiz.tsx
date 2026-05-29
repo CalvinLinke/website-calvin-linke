@@ -176,7 +176,7 @@ export default function SanierungsQuiz() {
       <AnimatePresence mode="wait">
         {step === 1 && (
           <Step key="step1" title="Um was für eine Immobilie handelt es sich?" step={1} total={TOTAL}>
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+            <div className="grid grid-cols-1 gap-3">
               {(["Einfamilienhaus", "Mehrfamilienhaus", "Wohnung", "Gewerbe"] as ObjektTyp[]).map((t) => (
                 <OptionButton
                   key={t}
