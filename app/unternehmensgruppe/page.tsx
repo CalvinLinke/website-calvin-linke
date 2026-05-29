@@ -66,7 +66,7 @@ export default function UnternehmensgruppeSeite() {
                         CADA Invest GmbH
                       </h2>
                       <span className="px-2.5 py-0.5 bg-[#091426] text-white text-xs font-semibold rounded-full">
-                        2022
+                        2024
                       </span>
                     </div>
                     <p className="text-sm text-[#545f73] font-medium">
@@ -152,7 +152,7 @@ export default function UnternehmensgruppeSeite() {
                         GFU Distribution
                       </h2>
                       <span className="px-2.5 py-0.5 bg-[#091426] text-white text-xs font-semibold rounded-full">
-                        2022
+                        2024
                       </span>
                     </div>
                     <p className="text-sm text-[#545f73] font-medium">
