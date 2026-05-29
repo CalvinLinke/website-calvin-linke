@@ -125,7 +125,7 @@ export default function StartPage() {
               >
                 {/* Navy oberteil */}
                 <div className="relative bg-[#091426] px-8 pt-8 pb-10 overflow-hidden flex-shrink-0">
-                  <span className="absolute -top-3 right-3 text-[88px] font-bold text-white/5 leading-none select-none pointer-events-none">
+                  <span className="absolute -top-3 right-3 text-[88px] font-bold text-[#f7f9fb]/20 leading-none select-none pointer-events-none">
                     {String(i + 1).padStart(2, "0")}
                   </span>
                   <div className="w-11 h-11 rounded-2xl bg-white/10 flex items-center justify-center group-hover:bg-white/20 transition-colors duration-300">
