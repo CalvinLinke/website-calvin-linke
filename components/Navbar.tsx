@@ -42,7 +42,7 @@ export default function Navbar() {
   }, [menuOpen]);
 
   const isHome = pathname === "/";
-  const transparent = !scrolled && !menuOpen && isHome;
+  const transparent = !scrolled && !menuOpen && (isHome || pathname === "/erfahrungen");
   const navBg = transparent
     ? "bg-transparent"
     : isHome
